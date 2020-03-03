@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
+import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
   //automatically called on class instance creation
@@ -9,8 +9,12 @@ class App extends React.Component {
     //super is required
     super(props);
     //Only acceptable direct assignment to this.state is inside constructor
-    this.state = { lat: null, errorMessage: '' };
+    //this.state = { lat: null, errorMessage: '' };
   }
+
+//State can also be initialized like this:
+  state = { lat: null, errorMessage: ''};
+
 
 componentDidMount(){
   window.navigator.geolocation.getCurrentPosition(
@@ -27,7 +31,7 @@ err => this.setState({ errorMessage: err.message })
     }
 
     if (!this.state.errorMessage && this.state.lat){
-      return <div>Latitude: {this.state.lat}</div>;
+      return <SeasonDisplay lat={this.state.lat} />;
     }
 
     return <div>Loading!</div>;
