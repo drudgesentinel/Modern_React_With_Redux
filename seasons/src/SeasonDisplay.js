@@ -1,6 +1,7 @@
 import './SeasonDisplay.css'
 import React from 'react';
-
+//typical convention indicates that config/helper functions at top
+//component at the bottom
 const seasonConfig = {
   summer: {
     seasonText: 'Let\'s hit the beach!',

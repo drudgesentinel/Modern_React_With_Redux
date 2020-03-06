@@ -15,7 +15,7 @@ class App extends React.Component {
 //State can also be initialized like this:
   state = { lat: null, errorMessage: ''};
 
-
+//data loading should go in componenetDidMount per community convention
 componentDidMount(){
   window.navigator.geolocation.getCurrentPosition(
   //use setState, not direct assignment except in constructor function
